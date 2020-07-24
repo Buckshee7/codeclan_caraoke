@@ -27,3 +27,6 @@ class TestGuest(unittest.TestCase):
     def test_guest_wallet_reduction(self):
         self.guest.reduce_wallet(5)
         self.assertEqual(15.5, self.guest.wallet) 
+
+    def test_guest_cheer(self):
+        self.assertEqual("Whoo! They have my favourite song!", self.guest.cheer())
