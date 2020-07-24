@@ -1,0 +1,2 @@
+class Bartab:
+    pass
