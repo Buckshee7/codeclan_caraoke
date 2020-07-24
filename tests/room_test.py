@@ -26,6 +26,11 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.guest)
         self.assertEqual(1, len(self.room.guests))
 
+    def test_check_in_guest_guest_no_money(self):
+        self.guest.wallet = 0
+        self.room.check_in_guest(self.guest)
+        self.assertEqual(0, len(self.room.guests))
+
     def test_cant_check_in_guest_over_capacity(self):
         self.room.check_in_guest(self.guest)
         self.room.check_in_guest(self.guest)
