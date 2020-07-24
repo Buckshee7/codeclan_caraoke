@@ -13,6 +13,7 @@ class Room:
         if len(self.guests) < self.capacity and guest.wallet >= self.entry_fee:
             self.guests.append(guest)
             guest.reduce_wallet(self.entry_fee)
+            self.bartab.add_receipt_item(guest, "Entry Fee", self.entry_fee)
 
     def check_out_guest(self, guest):
         if (guest in self.guests):
