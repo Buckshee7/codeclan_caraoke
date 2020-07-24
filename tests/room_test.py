@@ -37,7 +37,7 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.guest)
         self.assertEqual(1, len(self.room.guests))
 
-    def test_check_in_guest_guest_no_money(self):
+    def test_doesnt_check_in_guest_less_money_than_entry_fee(self):
         self.guest.wallet = 0
         self.room.check_in_guest(self.guest)
         self.assertEqual(0, len(self.room.guests))
@@ -51,6 +51,10 @@ class TestRoom(unittest.TestCase):
     def test_guest_check_in_reduces_guest_money_if_fee(self):
         self.room.check_in_guest(self.guest)
         self.assertEqual(10.5, self.guest.wallet)
+    
+    def test_check_in_produces_bartab_receipt_item(self):
+        self.room.check_in_guest(self.guest)
+        self.assertEqual(1, len(self.room.bartab.receipt))
 
     def test_can_check_out_guest_exists(self):
         self.room.check_in_guest(self.guest)
