@@ -1,3 +1,5 @@
+from classes.bartab import Bartab
+
 class Room:
     def __init__(self, number, capacity, fee = 0):
         self.number = number
@@ -5,6 +7,7 @@ class Room:
         self.songs = []
         self.guests = []
         self.entry_fee = fee
+        self.bartab = Bartab()
 
     def check_in_guest(self, guest):
         if len(self.guests) < self.capacity and guest.wallet >= self.entry_fee:
