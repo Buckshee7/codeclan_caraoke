@@ -4,7 +4,7 @@ import unittest
 class TestGuest(unittest.TestCase):
     
     def setUp(self):
-        self.guest = Guest("Tim", 32)
+        self.guest = Guest("Tim", 32, 20.5)
 
     def test_guest_has_name(self):
         self.assertEqual("Tim", self.guest.name)
@@ -13,4 +13,4 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(32, self.guest.age)
 
     def test_guest_has_wallet(self):
-        self.assertEqual(float, type(self.guest.wallet))
+        self.assertEqual(20.5, self.guest.wallet)

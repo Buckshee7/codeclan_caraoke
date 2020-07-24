@@ -6,8 +6,8 @@ import unittest
 class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room(1, 2)
-        self.guest = Guest("Tim", 32)
-        self.guest_2 = Guest("Beyonce", 38)
+        self.guest = Guest("Tim", 32, 20.5)
+        self.guest_2 = Guest("Beyonce", 38, 3.2)
         self.song = Song("Don't Stop Believin'", "Journey")
 
     def test_room_has_number(self):
