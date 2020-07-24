@@ -17,4 +17,4 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_wallet_reduction(self):
         self.guest.reduce_wallet(5)
-        self.asserEqual(15.5, self.guest.wallet) 
+        self.assertEqual(15.5, self.guest.wallet) 
