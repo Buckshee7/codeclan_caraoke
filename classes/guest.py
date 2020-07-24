@@ -7,3 +7,6 @@ class Guest:
 
     def reduce_wallet(self, amount):
         self.wallet -= amount
+
+    def cheer(self):
+        return "Whoo! They have my favourite song!"
