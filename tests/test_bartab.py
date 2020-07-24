@@ -10,4 +10,5 @@ class TestBartab(unittest.TestCase):
         self.assertEqual(list, type(self.tab.history))
 
     def test_bartab_increase(self):
-        self.assertEqual(10, self.tab.increase_total(10))
+        self.tab.increase_total(10)
+        self.assertEqual(10, self.tab.total)
