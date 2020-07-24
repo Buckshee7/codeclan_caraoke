@@ -6,5 +6,5 @@ class TestBartab(unittest.TestCase):
         self.tab = Bartab()
 
     def test_bartab_init(self):
-        self.asserEqual(0, self.tab.total)
-        self.asserEqual(list, type(self.tab.history))
+        self.assertEqual(0, self.tab.total)
+        self.assertEqual(list, type(self.tab.history))
