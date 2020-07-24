@@ -13,3 +13,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_songs_property(self):
         self.assertEqual(list, type(self.room.songs))
+
+    def test_room_has_guests_property(self):
+        self.assertEqual(list, type(self.room.guests))
