@@ -5,7 +5,7 @@ import unittest
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room = Room(1, 5)
+        self.room = Room(1, 2)
         self.guest = Guest("Tim", 32)
         self.guest_2 = Guest("Beyonce", 38)
         self.song = Song("Don't Stop Believin'", "Journey")
@@ -14,7 +14,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(1, self.room.number)
 
     def test_room_has_capacity(self):
-        self.assertEqual(5, self.room.capacity)
+        self.assertEqual(2, self.room.capacity)
 
     def test_room_has_songs_property(self):
         self.assertEqual(list, type(self.room.songs))
@@ -23,6 +23,12 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(list, type(self.room.guests))
 
     def test_can_check_in_guest(self):
+        self.room.check_in_guest(self.guest)
+        self.assertEqual(1, len(self.room.guests))
+
+    def test_cant_check_in_guest_over_capacity(self):
+        self.room.check_in_guest(self.guest)
+        self.room.check_in_guest(self.guest)
         self.room.check_in_guest(self.guest)
         self.assertEqual(1, len(self.room.guests))
 
