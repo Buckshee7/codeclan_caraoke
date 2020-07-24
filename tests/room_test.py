@@ -1,6 +1,7 @@
 from classes.room import Room
 from classes.guest import Guest
 from classes.song import Song
+from classes.bartab import Bartab
 import unittest
 
 class TestRoom(unittest.TestCase):
@@ -22,6 +23,9 @@ class TestRoom(unittest.TestCase):
     def test_room_has_entry_fee_default(self):
         no_fee_argument_room = Room(1, 2)
         self.assertEqual(0, no_fee_argument_room.entry_fee)
+
+    def test_room_has_bartab(self):
+        self.assertEqual(Bartab, type(self.room.bartab))
 
     def test_room_has_songs_property(self):
         self.assertEqual(list, type(self.room.songs))
