@@ -6,10 +6,10 @@ import unittest
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room = Room(1, 2, 10)
-        self.guest = Guest("Tim", 32, 20.5)
-        self.guest_2 = Guest("Beyonce", 38, 3.2)
         self.song = Song("Don't Stop Believin'", "Journey")
+        self.room = Room(1, 2, 10)
+        self.guest = Guest("Tim", 32, 20.5, self.song)
+        self.guest_2 = Guest("Beyonce", 38, 3.2)
 
     def test_room_has_number(self):
         self.assertEqual(1, self.room.number)
