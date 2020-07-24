@@ -56,6 +56,13 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.guest)
         self.assertEqual(1, len(self.room.bartab.receipt))
 
+    def test_check_in_with_fav_song_cheers(self):
+        self.room.add_song(self.song)
+        self.assertEqual("Whoo! They have my favourite song!", self.room.check_in_guest(self.guest))
+
+    def test_check_in_without_fav_song_does_not_cheer(self):
+        self.assertEqual(None, self.room.check_in_guest(self.guest))
+
     def test_can_check_out_guest_exists(self):
         self.room.check_in_guest(self.guest)
         self.room.check_out_guest(self.guest)
