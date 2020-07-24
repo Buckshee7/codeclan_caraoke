@@ -12,4 +12,4 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(5, self.room.capacity)
 
     def test_room_has_songs_property(self):
-        self.assertEqual("List", type(self.room.songs))
+        self.assertEqual(list, type(self.room.songs))
